@@ -32,7 +32,7 @@ You can consider the following for designing your levels. Try to be creative.
 • Boss Battles: Each level ends with a challenging boss battle.
 1.2.4 Bonus
 The following can be considered for extra credit.
-• Weapons: Players start with a basic rifle and can pick up various powerup weapons.
+• Weapons: Players start with a basic rifle and can pick up various power up weapons.
 • Power-ups: Collectible power-ups include spread shots, laser beams, and
 rapid-fire. Power-ups are dropped by defeated enemies or found in hidden
 areas.

@@ -11,11 +11,11 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Solid
+  - OneWay
+  - Enemy
+  - Border
   - 
   - 
   - 
