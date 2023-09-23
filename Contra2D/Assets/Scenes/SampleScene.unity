@@ -123,6 +123,68 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &8851756
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1590459764}
+    m_Modifications:
+    - target: {fileID: 2265115708275508769, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+      propertyPath: m_Name
+      value: Bridge (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009031994051195490, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -55.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009031994051195490, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009031994051195490, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009031994051195490, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009031994051195490, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009031994051195490, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009031994051195490, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009031994051195490, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009031994051195490, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009031994051195490, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+--- !u!4 &8851757 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5009031994051195490, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+  m_PrefabInstance: {fileID: 8851756}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &65987351
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +282,68 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.46}
   m_EdgeRadius: 0
+--- !u!1001 &66239783
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1590459764}
+    m_Modifications:
+    - target: {fileID: 2265115708275508769, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+      propertyPath: m_Name
+      value: Bridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009031994051195490, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -37.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009031994051195490, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009031994051195490, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009031994051195490, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009031994051195490, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009031994051195490, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009031994051195490, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009031994051195490, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009031994051195490, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009031994051195490, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+--- !u!4 &66239784 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5009031994051195490, guid: f629f3216e608424bad357195fb27bc2, type: 3}
+  m_PrefabInstance: {fileID: 66239783}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &83404317
 GameObject:
   m_ObjectHideFlags: 0
@@ -3131,7 +3255,7 @@ SpriteRenderer:
   m_Size: {x: 0.23, y: 0.34}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1135537813
@@ -3736,6 +3860,8 @@ Transform:
   - {fileID: 2109088975}
   - {fileID: 1068047020}
   - {fileID: 239603488}
+  - {fileID: 66239784}
+  - {fileID: 8851757}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1664028330
