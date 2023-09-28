@@ -3,7 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Bullet
+  - EnemiesBullet
+  - NoFalling
+  - Enemy
+  - PowerUpB
+  - GROUND
+  - DeathLayer
+  - Water
+  - PowerUpM
+  - PowerUpF
+  - Bounds
+  - MeelyEnemy
+  - SoldierEnemy
   layers:
   - Default
   - TransparentFX
@@ -11,13 +24,13 @@ TagManager:
   - 
   - Water
   - UI
+  - 
+  - 
   - Player
-  - Solid
-  - OneWay
+  - Wall
   - Enemy
-  - Border
-  - 
-  - 
+  - Bullets
+  - EnemyBullets
   - 
   - 
   - 
@@ -40,4 +53,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 4230925849
+    locked: 0
+  - name: Foreground
+    uniqueID: 2911905111
+    locked: 0
+  - name: Player
+    uniqueID: 2757369003
     locked: 0
