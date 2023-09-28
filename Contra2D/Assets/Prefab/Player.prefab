@@ -545,7 +545,7 @@ MonoBehaviour:
   direction: 0
   solid:
     serializedVersion: 2
-    m_Bits: 4608
+    m_Bits: 512
   oneway:
     serializedVersion: 2
     m_Bits: 1024
