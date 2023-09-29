@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class MeeleRunner : StateMachineBehaviour
 {
-    public float moveSpeed = 2f;
+    private float moveSpeed = 2f;
     public float attackRange = 2f;
     public float followRange = 10f;
-    public float distance;
+    private float distance;
     private Transform player;
     Rigidbody2D rigidbody;
     MeelyEnemy meeleEnemy;
@@ -32,7 +32,7 @@ public class MeeleRunner : StateMachineBehaviour
         {           
             animator.SetTrigger("Attack");
         }
-        if (distance < 15f && distance >1f ) 
+        if (distance < 15f && distance > 1.2f ) 
         { 
             Vector2 target = new(player.position.x, rigidbody.position.y);
             Vector2 newPos = Vector2.MoveTowards(rigidbody.position, target, moveSpeed * Time.fixedDeltaTime);
