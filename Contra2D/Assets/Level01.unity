@@ -4710,7 +4710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114999915214353636, guid: 550b701b403e98440b4ea82481b2990a, type: 3}
       propertyPath: resetX
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114999915214353636, guid: 550b701b403e98440b4ea82481b2990a, type: 3}
       propertyPath: healthBar

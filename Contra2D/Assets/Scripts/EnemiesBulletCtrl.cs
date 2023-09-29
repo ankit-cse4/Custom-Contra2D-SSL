@@ -39,7 +39,7 @@ public class EnemiesBulletCtrl : MonoBehaviour {
 
        
        
-        rigidBody.velocity = new Vector2(xaxis, yaxis).normalized * 7;
+        rigidBody.velocity = new Vector2(xaxis, yaxis).normalized * 9;
        
    
     }
