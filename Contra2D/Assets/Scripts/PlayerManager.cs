@@ -28,13 +28,13 @@ public class PlayerManager : MonoBehaviour
     public GameObject bulletDown;
     private Transform firePositionS;
     private Transform firePositionWd;
-    public GameObject bulletF;
+
     public int life;
 
     public float playerHealth;
     public float maxHealth = 100f;
-    public GameObject bulletFLeft;
-    public int shootingType;
+
+
     public float runningSpeed;
     private float speed;
     public bool horizontalLevel;
@@ -78,7 +78,7 @@ public class PlayerManager : MonoBehaviour
         facingRight = true;
         isVisible = true;
         playerHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetMaxHealth(100f);
         healthBar.SetHealth(playerHealth);
 
     }
@@ -249,10 +249,31 @@ public class PlayerManager : MonoBehaviour
 
 
     }
+
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
+        if (collision.gameObject.tag == "LifeUP"){
+            if(life<5) {
+                life +=1;
+                Debug.Log(life);
+            }
+        }
+        if(collision.gameObject.CompareTag("Invincible")){
+            isVisible = false;
+            
+            Invoke(nameof(MakeVisible), 5f);
 
+        }
+        if(collision.gameObject.CompareTag("Heal")){
+            if(playerHealth < 100){
+                playerHealth += 20;
+                healthBar.SetHealth(playerHealth);
+                
+                
+        }
+        }
 
         if (collision.gameObject.CompareTag("GROUND"))
         {

@@ -6,17 +6,16 @@ TagManager:
   tags:
   - Bullet
   - EnemiesBullet
-  - NoFalling
   - Enemy
-  - PowerUpB
   - GROUND
   - DeathLayer
   - Water
-  - PowerUpM
-  - PowerUpF
   - Bounds
   - MeelyEnemy
   - SoldierEnemy
+  - LifeUP
+  - Heal
+  - Invincible
   layers:
   - Default
   - TransparentFX
@@ -31,7 +30,7 @@ TagManager:
   - Enemy
   - Bullets
   - EnemyBullets
-  - 
+  - Powerup
   - 
   - 
   - 
