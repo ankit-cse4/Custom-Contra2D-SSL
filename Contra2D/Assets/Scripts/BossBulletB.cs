@@ -41,7 +41,7 @@ public class BossBulletB : MonoBehaviour {
 
        
        
-        rigidBody.velocity = new Vector2(xaxis, yaxis).normalized * 9;
+        rigidBody.velocity = new Vector2(xaxis, yaxis).normalized * 5;
        
    
     }
