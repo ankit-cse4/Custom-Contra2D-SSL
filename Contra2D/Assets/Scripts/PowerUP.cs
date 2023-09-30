@@ -21,6 +21,7 @@ public class PowerUP : MonoBehaviour
    private void OnCollisionEnter2D(Collision2D other){
         if (other.gameObject.CompareTag("Player"))
         {
+            GetComponent<AudioSource>().Play();
             Destroy(gameObject,0);
 
         }

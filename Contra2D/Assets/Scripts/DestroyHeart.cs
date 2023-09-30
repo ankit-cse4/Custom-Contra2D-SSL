@@ -13,33 +13,47 @@ public class DestroyHeart : MonoBehaviour {
 	
 	void Start () {
        
-        // int number = player.GetComponent<PlayerManager>().life;
+        // health = player.GetComponent<PlayerManager>().life;
+        
 
      
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        playerHealth = player.GetComponent<PlayerManager>().life;
-        Debug.Log("DestroyHearts");
-        Debug.Log(playerHealth);
-        
-        if(health == playerHealth )
-        {
-            gameObject.SetActive(false);
-        }
-        if(health > playerHealth  )
-        {
-            
-            gameObject.SetActive(false);
-            
-        }
-        if (health < playerHealth ){
+	// void Update () {
+    //     playerHealth = player.GetComponent<PlayerManager>().life;
 
-            gameObject.SetActive(true);
-            Debug.Log("check");
-        }
         
+    //     if(health < playerHealth )
+    //     {
+    //         gameObject.SetActive(true);
+    //     }
+    //     // if(health > playerHealth  )
+    //     // {
+            
+    //     //     gameObject.SetActive(false);
+            
+    //     // }
+    //     else{
+
+    //         gameObject.SetActive(false);
+
+    //     }
+        
+    // }
+
+
+    void Update () {
+    playerHealth = player.GetComponent<PlayerManager>().life;
+
+    if(health < playerHealth )
+    {
+        gameObject.GetComponent<Image>().enabled = true; 
+    }
+    else
+    {
+        gameObject.GetComponent<Image>().enabled = false; 
+    }
     }
 
 }

@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class PlayerManager : MonoBehaviour
 {
 
+    public AudioSource deathSound;
+    public AudioSource damageSound;
 
     public float resetX;
     public GameObject bulletLeftUp;
@@ -42,7 +44,6 @@ public class PlayerManager : MonoBehaviour
     private Transform firePosition;
     private Transform firePositionW;
 
-    private Transform firePositionF;
     private float fireRate = 3f;
     float timeToFire = 0;
     public bool facingRight;
@@ -52,6 +53,8 @@ public class PlayerManager : MonoBehaviour
     private bool onWater;
     private bool onGround;
     private bool jump = true;
+
+    private bool bleach = false;
     public float gravity;
 
     public HealthBar healthBar;
@@ -69,6 +72,7 @@ public class PlayerManager : MonoBehaviour
         firePositionWd = transform.Find("FirePointW");
         firePositionS = transform.Find("FirePointS");
         firePositionW = transform.Find("FirePointOnlyW");
+
 
 
         // firePositionF = transform.Find("SpinningFirePoint");
@@ -91,6 +95,19 @@ public class PlayerManager : MonoBehaviour
             Move(speed);
             Flip();
         }
+
+        // if( Input.GetKeyDown(KeyCode.U) && onGround){
+        //     animator.SetBool("Emote", true);
+
+            
+        // }
+        // if( Input.GetKeyUp(KeyCode.U)){
+        //     animator.SetBool("Emote", false);
+
+            
+        // }
+        
+
 
         if (Input.GetKey(KeyCode.D))
         {
@@ -191,6 +208,7 @@ public class PlayerManager : MonoBehaviour
         bool anyKey = false;
 
 
+
         if (Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
         {
             Instantiate(bulletDown, firePositionS.position, Quaternion.identity);
@@ -275,16 +293,20 @@ public class PlayerManager : MonoBehaviour
         }
         }
 
-        if (collision.gameObject.CompareTag("GROUND"))
+        if (collision.gameObject.CompareTag("GROUND") )
         {
             readyToFall = true;
             onGround = true;
             onWater = false;
+            bleach = true;
         }
 
+        // if (collision.gameObject.CompareTag("Water")){
+        //     bleach = false;
 
+        // }
 
-        if (collision.gameObject.CompareTag("Water") || collision.gameObject.CompareTag("GROUND"))
+        if (collision.gameObject.CompareTag("Water") || collision.gameObject.CompareTag("GROUND") )
         {
             jump = false;
             animator.SetBool("Ground", true);
@@ -292,7 +314,7 @@ public class PlayerManager : MonoBehaviour
 
 
 
-        if (collision.gameObject.CompareTag("Water") && readyToFall)
+        if (collision.gameObject.CompareTag("Water") && readyToFall )
         {
             readyToFall = false;
         }
@@ -308,6 +330,7 @@ public class PlayerManager : MonoBehaviour
                 jump = false;
                 //Debug.Log("Animation stopped on jump");
             }
+            
             TakeDamage(20f);
             //Debug.Log("Damage Recieved");
         }
@@ -323,7 +346,7 @@ public class PlayerManager : MonoBehaviour
         if (isVisible && (collision.gameObject.CompareTag("DeathLayer") ||
         collision.gameObject.CompareTag("Enemy") /*|| collision.gameObject.CompareTag("MeelyEnemy") || collision.gameObject.CompareTag("SoldierEnemy")*/))
         {
-            GetComponent<AudioSource>().Play();
+            deathSound.Play();
 
             Destroy(collision.gameObject, 0.5f);
             rigidbody2d.simulated = false;
@@ -346,7 +369,7 @@ public class PlayerManager : MonoBehaviour
 
                 if (life == 0)
                 {   
-                    GetComponent<AudioSource>().Play();
+                    deathSound.Play();;
                     playerHealth = 0f;
                     healthBar.SetHealth(playerHealth);
                     Invoke(nameof(GameOver), 2f);
@@ -398,7 +421,7 @@ public class PlayerManager : MonoBehaviour
         }*/
         if (life == 0)
         {
-            GetComponent<AudioSource>().Play();
+            deathSound.Play();
             healthBar.SetHealth(0f);
             /*boxCollider.isTrigger = true;
             circleCollider.isTrigger = true;*/
@@ -424,6 +447,7 @@ public class PlayerManager : MonoBehaviour
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
+            Debug.Log("playerFlp");
 
         }
     }
@@ -462,14 +486,20 @@ public class PlayerManager : MonoBehaviour
         animator.SetBool("Dead", false);
 
     }
+
+
     private void MakeVisible()
     {
         isVisible = true;
     }
+
+
     private void GameOver()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);  
     }
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -483,11 +513,13 @@ public class PlayerManager : MonoBehaviour
     public void TakeDamage(float damage)
     {
         playerHealth -= damage;
+        damageSound.Play();
+        
 
 
         if (playerHealth <= 0)
         {
-            GetComponent<AudioSource>().Play();
+            deathSound.Play();
             rigidbody2d.simulated = false;
             life--;
             animator.SetBool("Dead", true);

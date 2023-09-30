@@ -22,7 +22,7 @@ public class BossController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         health = 8;
-        boxCollider = gameObject.GetComponent<BoxCollider2D>();
+        // boxCollider = gameObject.GetComponent<BoxCollider2D>();
         animator = gameObject.GetComponent<Animator>();
         GameObject myObject = GameObject.Find("Player");
         target = myObject.transform;
@@ -51,7 +51,7 @@ public class BossController : MonoBehaviour {
         {
             GetComponent<AudioSource>().Play();
             animator.SetBool("Destroyed", true);
-            boxCollider.isTrigger = true;
+            Destroy(gameObject, 1f);
             isDead = true;
             
 
