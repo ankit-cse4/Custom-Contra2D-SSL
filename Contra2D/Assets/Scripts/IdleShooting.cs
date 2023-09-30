@@ -68,9 +68,9 @@ public class IdleShooting : MonoBehaviour
          if (health <= 0)
         {
             isDead = true;
-            // GetComponent<AudioSource>().Play();
+            GetComponent<AudioSource>().Play();
             //Instantiate(particles, transform.position, transform.rotation);
-            // anim.SetBool("Destroy",true);
+            anim.SetBool("Destroyed",true);
             Destroy(gameObject, 1f);
             
         }

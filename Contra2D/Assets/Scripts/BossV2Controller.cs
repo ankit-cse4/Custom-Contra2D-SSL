@@ -12,6 +12,7 @@ public class BossV2Controller : MonoBehaviour {
     private GameObject finish;
     private Transform firePosition;
     private Transform firePosition2;
+    private Transform firePosition3;
     private bool isDead = false;
     private Transform target;
     private float distance;
@@ -29,6 +30,7 @@ public class BossV2Controller : MonoBehaviour {
        
         firePosition = transform.Find("FirePosition1");
         firePosition2 = transform.Find("FirePosition2");
+        firePosition3 = transform.Find("FirePosition3");
         InvokeRepeating("Shoot", 0, 1);
 
     }
@@ -66,6 +68,7 @@ public class BossV2Controller : MonoBehaviour {
 
             Instantiate(bullet, firePosition.position, Quaternion.identity);
             Instantiate(bullet, firePosition2.position, Quaternion.identity);
+            Instantiate(bullet, firePosition3.position, Quaternion.identity);
         }
     }
     private void LoadNext()

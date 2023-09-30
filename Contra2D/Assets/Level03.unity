@@ -3303,7 +3303,7 @@ GameObject:
   - component: {fileID: 1746938782}
   - component: {fileID: 1746938781}
   m_Layer: 10
-  m_Name: ContraMapStage5BG (1)
+  m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -48,7 +48,14 @@ public class ShootingEnemy : MonoBehaviour
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
-        anim.SetInteger("Angle",(int) checkAngle());
+
+        distance = Mathf.Abs(transform.position.x - target.position.x) + Mathf.Abs(transform.position.y - target.position.y);
+        if (distance < 20f)
+        {
+            temp = true;
+        }
+        else temp = false;
+        
         
     }
 
@@ -61,7 +68,7 @@ public class ShootingEnemy : MonoBehaviour
          if (health <= 0)
         {
             isDead = true;
-            // GetComponent<AudioSource>().Play();
+            GetComponent<AudioSource>().Play();
             //Instantiate(particles, transform.position, transform.rotation);
             anim.SetBool("Destroy",true);
             Destroy(gameObject, 1f);
@@ -76,12 +83,7 @@ public class ShootingEnemy : MonoBehaviour
     public float checkAngle()
     {
 
-        distance = Mathf.Abs(transform.position.x - target.position.x) + Mathf.Abs(transform.position.y - target.position.y);
-        if (distance < 20f)
-        {
-            temp = true;
-        }
-        else temp = false;
+
 
         A = new Vector2(transform.position.x, transform.position.y);
         B = new Vector2(target.position.x, target.position.y);
