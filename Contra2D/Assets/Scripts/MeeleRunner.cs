@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MeeleRunner : StateMachineBehaviour
 {
-    private float moveSpeed = 2f;
+    private float moveSpeed = 5f;
     public float attackRange = 2f;
     public float followRange = 10f;
     private float distance;

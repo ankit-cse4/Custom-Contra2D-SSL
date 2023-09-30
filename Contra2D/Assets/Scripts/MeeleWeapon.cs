@@ -19,9 +19,10 @@ public class MeeleWeapon : MonoBehaviour
 
         if (col != null)
         {
-            Debug.Log("It starts");
-            col.GetComponent<PlayerManager>().TakeDamage(attackDamage);
-            Debug.Log("Damage given to player.");
+            bool visibility = col.GetComponent<PlayerManager>().isVisible;
+            if (visibility) {
+            col.GetComponent<PlayerManager>().TakeDamage(attackDamage);}
+        
         }
     }
 

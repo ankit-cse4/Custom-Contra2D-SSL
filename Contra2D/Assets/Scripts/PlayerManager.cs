@@ -14,7 +14,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject bulletRightDown;
     public float resetY;
     public GameObject bulletRight;
-    private bool isVisible;
+    public bool isVisible;
     // private BoxCollider2D boxCollider;
     // private CircleCollider2D circleCollider;
     private bool readyToFall;
@@ -369,7 +369,7 @@ public class PlayerManager : MonoBehaviour
 
                 if (life == 0)
                 {   
-                    deathSound.Play();;
+                    //deathSound.Play();;
                     playerHealth = 0f;
                     healthBar.SetHealth(playerHealth);
                     Invoke(nameof(GameOver), 2f);
@@ -380,7 +380,7 @@ public class PlayerManager : MonoBehaviour
                     playerHealth = 100f;
                     Invoke(nameof(RestartOne), 1f);
                     Invoke(nameof(Restart), 1f);
-                    Invoke(nameof(MakeVisible), 5f);
+                    Invoke(nameof(MakeVisible), 3f);
                     /*healthBar.SetHealth(playerHealth);*/
                 }
           /*  }*/
@@ -512,6 +512,8 @@ public class PlayerManager : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if(isVisible)
+        {
         playerHealth -= damage;
         damageSound.Play();
         
@@ -531,6 +533,8 @@ public class PlayerManager : MonoBehaviour
         {
             healthBar.SetHealth(playerHealth);
         } 
+
+        }
     }
 }
 
