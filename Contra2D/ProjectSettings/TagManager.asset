@@ -16,6 +16,9 @@ TagManager:
   - LifeUP
   - Heal
   - Invincible
+  - NoFalling
+  - InvokeBoss
+  - TankCollider
   layers:
   - Default
   - TransparentFX

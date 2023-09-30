@@ -7,11 +7,11 @@ public class TankEnemy : MonoBehaviour
 {
     public Transform player;
     public bool isFlipped;
-    private float tankSpeed = 2f;
+    private float tankSpeed = 1f;
     private Animator animator;
     public GameObject enemyBullet;
     private float distance;
-    private float tankHealth = 5;
+    private float tankHealth = 10;
     private Transform firePosition;
     private bool move = true;
     private bool isDead = false;
@@ -33,6 +33,7 @@ public class TankEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        LookAtPlayer();
         distance = Mathf.Abs(player.position.x - transform.position.x);
 
         if (distance < 20f)
@@ -41,6 +42,7 @@ public class TankEnemy : MonoBehaviour
 
             if (distance > 2f && move)
             {
+                Debug.Log(dir);
                 transform.position = new Vector3(transform.position.x + Time.deltaTime * tankSpeed * dir, transform.position.y, transform.position.z);
                 animator.SetBool("Move", true);
             }
@@ -60,21 +62,21 @@ public class TankEnemy : MonoBehaviour
     public void LookAtPlayer()
     {
         Vector3 flipped = transform.localScale;
-        flipped.z *= -1f;
+        flipped.z = -flipped.z;
 
         if (transform.position.x > player.position.x && isFlipped)
         {
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);
             isFlipped = false;
-            dir = 1;
+            dir = -1;
         }
         else if (transform.position.x < player.position.x && !isFlipped)
         {
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);
             isFlipped = true;
-            dir = -1;
+            dir = 1;
         }
     }
 
@@ -96,7 +98,6 @@ public class TankEnemy : MonoBehaviour
         }
         if (tankHealth <= 0)
         {
-            /*move = false;*/
             isDead = true;
             animator.SetBool("Move", false);
             animator.SetBool("Idle", false);

@@ -5,50 +5,56 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
-    public GameObject leftPoint;
-    public GameObject rightPoint;
-    private Transform currPoint;
+    private Vector3 currPoint;
+    private bool movingRight;
+    [SerializeField] private Transform leftPoint;
+    [SerializeField] private Transform rightPoint;
     [SerializeField]private float enemySpeed;
-    private float direction;
+    [SerializeField] private Transform patrolPoint;
+    
     // Start is called before the first frame update
     void Start()
     {
-        currPoint = rightPoint.transform;
-        direction = 1f;
+        currPoint = patrolPoint.localScale;
+        movingRight = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Vector2 point = currPoint.position - transform.position;
-        if (currPoint == rightPoint.transform)
+        if (!movingRight)
         {
-            transform.position = new Vector3(transform.position.x + Time.deltaTime * enemySpeed * direction, transform.position.y, transform.position.z);
+            if (patrolPoint.position.x >= leftPoint.position.x)
+            {
+                // change direction in movement
+                Move(-1);
+            }
+            else
+            {
+                movingRight = !movingRight;
+            }
         }
         else
         {
-            transform.position = new Vector3(transform.position.x + Time.deltaTime * enemySpeed * direction, transform.position.y, transform.position.z);
+            if (patrolPoint.position.x <= rightPoint.position.x)
+            {
+                // move in same direction
+                Move(1);
+            }
+            else
+            {
+                movingRight = !movingRight;
+            }
         }
 
-        if (Vector2.Distance(transform.position, currPoint.position) < 0.5f && currPoint == rightPoint.transform)
-        {
-            // Flip();
-            direction = -direction;
-            currPoint = leftPoint.transform;
-        }
-        if (Vector2.Distance(transform.position, currPoint.position) < 0.5f && currPoint == leftPoint.transform)
-        {
-            // Flip();
-            direction = -direction;
-            currPoint = rightPoint.transform;
-        }
     }
-
-    private void Flip()
+     private void Move(int dir)
     {
-        Vector3 flipped = transform.localScale;
-        flipped.x *= -1f;
-        transform.localScale = flipped;
-        direction *= -1f;
+        float x = Mathf.Abs(currPoint.x) * dir;
+        // Change the direction in the facing of movement
+        patrolPoint.localScale = new Vector3(x, currPoint.y, currPoint.z);
+        // Moving to the updated location
+        patrolPoint.position = new Vector3(patrolPoint.position.x + Time.deltaTime * enemySpeed * dir, 
+            patrolPoint.position.y, patrolPoint.position.z);
     }
 }

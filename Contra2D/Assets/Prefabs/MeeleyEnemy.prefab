@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  attackDamage: 0
+  attackDamage: 20
   isFlipped: 1
 --- !u!95 &7989306514443192655
 Animator:
