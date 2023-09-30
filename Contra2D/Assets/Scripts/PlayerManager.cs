@@ -325,10 +325,10 @@ public class PlayerManager : MonoBehaviour
         {
             GetComponent<AudioSource>().Play();
 
+            Destroy(collision.gameObject, 0.5f);
             rigidbody2d.simulated = false;
             /*if (collision.gameObject.CompareTag("MeelyEnemy") *//* || collision.gameObject.CompareTag("SoldierEnemy")*//*)
             {
-                Destroy(collision.gameObject, 0.5f);
                 StartCoroutine(WaitForSec(0.5f));
             }
             else
