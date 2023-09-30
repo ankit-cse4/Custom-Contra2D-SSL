@@ -11,7 +11,7 @@ public class CameraControl : MonoBehaviour {
    
 	
 	void Start () {
-		x = 11.590f;
+		x = 15f;
         
 	}
 	
