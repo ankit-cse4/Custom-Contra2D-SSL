@@ -18,7 +18,9 @@ public class Turret : MonoBehaviour {
     private bool range = false;
     private bool isDead = false;
     // private CircleCollider2D circleCollider;
-    // private Animator animator;
+    private Animator animator;
+
+    public float fireRate;
     
     public Vector3 diff;
     
@@ -28,10 +30,10 @@ public class Turret : MonoBehaviour {
         target = myObject.transform;
         firePosition = transform.Find("EnemyFirePoint");
         // circleCollider = gameObject.GetComponent<CircleCollider2D>();
-        // animator = gameObject.GetComponent<Animator>();
+        animator = gameObject.GetComponent<Animator>();
         if (!isDead)
         {
-            InvokeRepeating("Shoot", 0, 2);
+            InvokeRepeating("Shoot", 0, fireRate);
         }
     }
 	
@@ -79,7 +81,8 @@ public class Turret : MonoBehaviour {
             GetComponent<AudioSource>().Play();
             isDead = true;
             
-            Instantiate(particles, transform.position, transform.rotation);
+            // Instantiate(particles, transform.position, transform.rotation);
+            animator.SetBool("Destroyed", true);
             Destroy(gameObject, 1f);
         }
         else
