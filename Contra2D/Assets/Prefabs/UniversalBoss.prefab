@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 7307258191838671699}
   m_Layer: 10
   m_Name: UniversalBoss
-  m_TagString: Enemy
+  m_TagString: UniversalBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

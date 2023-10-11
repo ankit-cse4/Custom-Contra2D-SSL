@@ -9,10 +9,14 @@ public class MeelyEnemy : MonoBehaviour
     public bool isFlipped;
     private bool isDead;
     private Animator animator;
+    private BoxCollider2D boxCollidor;
+    private CapsuleCollider2D capusuleCollidor;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        boxCollidor = GetComponent<BoxCollider2D>();
+        capusuleCollidor = GetComponent<CapsuleCollider2D>();
     }
 
     public void LookAtPlayer()
@@ -38,6 +42,8 @@ public class MeelyEnemy : MonoBehaviour
     {
         if (coll.gameObject.CompareTag("Bullet") || coll.gameObject.CompareTag("DeathLayer") || coll.gameObject.CompareTag("Bounds") || coll.gameObject.CompareTag("Water"))
         {
+            boxCollidor.enabled = false;
+            capusuleCollidor.enabled = false;
             isDead = true;
             Debug.Log("Animation Should start");
             animator.SetBool("Dead", true);

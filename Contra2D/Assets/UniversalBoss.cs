@@ -62,16 +62,17 @@ public class UniversalBoss : MonoBehaviour
             }
             else
             {
-                if (boss1Dead && boss2Dead)
-                {
-                    health--;
-                }
+                // if (boss1Dead && boss2Dead)
+                // {
+                //     health--;
+                // }
+                health--;
             }
         }
         if (health == 0)
         {
             isDead = true;
-            /*GetComponent<AudioSource>().Play();*/
+            GetComponent<AudioSource>().Play();
             /*animator.SetBool("Dead", true);*/
             /*levelComplete.GetComponent<BoxCollider2D>().enabled = false;*/
             Destroy(gameObject, 2f);

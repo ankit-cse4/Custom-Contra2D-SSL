@@ -824,8 +824,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -321, y: -118}
-  m_SizeDelta: {x: 237.0366, y: 114.4}
+  m_AnchoredPosition: {x: -307.84894, y: -114.05469}
+  m_SizeDelta: {x: 263.3387, y: 122.2906}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &746305904
 MonoBehaviour:
@@ -861,6 +861,15 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'General Instruction:
+
+    Down -> s | Up -> w | Right ->d | left -> a
+
+    Jump
+    -> SpaceBar
+
+    Crouch -> z
+
+    Fire -> k
 
 '
 --- !u!222 &746305905

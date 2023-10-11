@@ -49,7 +49,7 @@ public class IdleShooting : MonoBehaviour
         }
 
         distance = Mathf.Abs(transform.position.x - target.position.x) + Mathf.Abs(transform.position.y - target.position.y);
-        if (distance < 35f)
+        if (distance < 20f)
         {
             temp = true;
         }
@@ -69,9 +69,9 @@ public class IdleShooting : MonoBehaviour
         {
             isDead = true;
             GetComponent<AudioSource>().Play();
-            //Instantiate(particles, transform.position, transform.rotation);
-            anim.SetBool("Destroyed",true);
-            Destroy(gameObject, 1f);
+            Instantiate(particles, transform.position, transform.rotation);
+            //anim.SetBool("Destroyed",true);
+            Destroy(gameObject, 0.5f);
             
         }
         else

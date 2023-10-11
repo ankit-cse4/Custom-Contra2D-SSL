@@ -8,7 +8,7 @@ public class DestroyBullet : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Destroy(gameObject, 2.5f);
+        Destroy(gameObject, 2f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

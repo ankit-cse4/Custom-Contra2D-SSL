@@ -191,7 +191,7 @@ public class PlayerManager : MonoBehaviour
         if (Input.GetKey(KeyCode.K))
         {
             animator.SetBool("Shooting", true);
-            isVisible = true;
+            //isVisible = true;
         }
         else
             animator.SetBool("Shooting", false);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MeeleWeapon : MonoBehaviour
 {
-    public float attackDamage = 50f;
+    public float attackDamage = 20f;
     public Vector3 attOffset;
     public float rangeAttack = 2f;
     public LayerMask attackMask;

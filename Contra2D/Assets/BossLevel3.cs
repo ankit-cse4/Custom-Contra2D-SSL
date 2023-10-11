@@ -23,7 +23,7 @@ public class BossLevel3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = 5;
+        health = 2;
         /*animator = GetComponent<Animator>();*/
         targetPlayer = GameObject.Find("Player").transform;
         bossFirePoint1 = transform.Find("RightBoss").Find("UniversalBossFirePoint1");
@@ -46,7 +46,7 @@ public class BossLevel3 : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
@@ -55,15 +55,15 @@ public class BossLevel3 : MonoBehaviour
 
         if (health <= 2 && !isDead)
         {
-            InvokeRepeating("Shoot", 0, 0.6f);
+            InvokeRepeating("Shoot", 0, 1f);
         }
         if (health ==0)
         {
             isDead = true;
-            universeBoss.GetComponent<UniversalBoss>().BossDied();
-            /*GetComponent<AudioSource>().Play();*/
+            //universeBoss.GetComponent<UniversalBoss>().BossDied();
+            GetComponent<AudioSource>().Play();
             /*animator.SetBool("Dead", true);*/
-            Destroy(gameObject, 2f);
+            Destroy(gameObject, 0f);
         }
     }
 

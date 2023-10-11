@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShootingEnemy : MonoBehaviour
 {
 
-    private int health = 2;
+    private int health = 1;
     public bool invinsible;
 
     public GameObject enemyBullet;
@@ -33,7 +33,7 @@ public class ShootingEnemy : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         if (!isDead)
         {
-            InvokeRepeating("Shoot", 0, 2);
+            InvokeRepeating("Shoot", 0, 2f);
         }
         
     }
@@ -50,7 +50,7 @@ public class ShootingEnemy : MonoBehaviour
         }
 
         distance = Mathf.Abs(transform.position.x - target.position.x) + Mathf.Abs(transform.position.y - target.position.y);
-        if (distance < 20f)
+        if (distance < 30f)
         {
             temp = true;
         }
