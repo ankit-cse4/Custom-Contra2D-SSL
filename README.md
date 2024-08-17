@@ -1,8 +1,8 @@
-#### COP701: Assignment #2
+# COP701: Assignment #2
 
 August 26, 2023
 
-### Contra game
+# Contra game
 
 ## 1.1 Problem Statement
 
@@ -17,12 +17,12 @@ new features.
 
 ## 1.2 Game details
 
-# 1.2.1 Game overview
+### 1.2.1 Game overview
 ”Contra” is a classic run-and-gun platformer game known for its intense action
 and challenging levels. Players control soldiers fighting against alien and enemy
 forces in a 2D side-scrolling environment.
 
-# 1.2.2 Game mechanics
+### 1.2.2 Game mechanics
 The following features must be included:
 - Player Controls: Player(s) can move left/right, jump, crouch, and shoot.
 - Health: Players have a health bar; getting hit reduces health.
@@ -32,13 +32,13 @@ score.
 
 
 
-# 1.2.3 Level design
+### 1.2.3 Level design
 You can consider the following for designing your levels. Try to be creative.
 - Themes: Levels include jungle, base, alien ship, and fortress themes.
 - Obstacles: Levels feature platforms, traps, and moving hazards.
 - Boss Battles: Each level ends with a challenging boss battle.
 
-# 1.2.4 Bonus
+### 1.2.4 Bonus
 The following can be considered for extra credit.
 - Weapons: Players start with a basic rifle and can pick up various power up weapons.
 - Power-ups: Collectible power-ups include spread shots, laser beams, and
